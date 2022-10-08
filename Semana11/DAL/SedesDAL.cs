@@ -11,7 +11,7 @@ namespace Semana11.DAL
 {
     public class SedesDAL
     {
-        Database db;
+        private Database db;
         public SedesDAL()
         {
             db = new Database();
