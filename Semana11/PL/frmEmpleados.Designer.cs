@@ -124,6 +124,7 @@ namespace Semana11.PL
             this.btnUpdate.TabIndex = 57;
             this.btnUpdate.Text = "Actualizar";
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnInsert
             // 
@@ -133,6 +134,7 @@ namespace Semana11.PL
             this.btnInsert.TabIndex = 56;
             this.btnInsert.Text = "Insertar";
             this.btnInsert.UseVisualStyleBackColor = true;
+            this.btnInsert.Click += new System.EventHandler(this.btnInsert_Click);
             // 
             // btnClose
             // 
