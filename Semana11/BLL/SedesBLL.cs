@@ -12,6 +12,11 @@ namespace Semana11.BLL
         private string nombre;
         private string ubicacion;
 
+        public SedesBLL(int id)
+        {
+            this.id = id;
+        }
+
         public SedesBLL(int id, string nombre, string ubicacion)
         {
             this.id = id;

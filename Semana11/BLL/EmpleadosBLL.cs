@@ -15,6 +15,11 @@ namespace Semana11.BLL
         private string telefono;
         private string dui;
 
+        public EmpleadosBLL(int id)
+        {
+            this.id = id;
+        }
+
         public EmpleadosBLL(int id, string nombres, string apellidos, string email, string telefono, string dui)
         {
             this.id = id;
