@@ -115,6 +115,7 @@ namespace Semana11.PL
             this.btnDelete.TabIndex = 58;
             this.btnDelete.Text = "Eliminar";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnUpdate
             // 
@@ -154,6 +155,7 @@ namespace Semana11.PL
             this.dgvEmpleados.ReadOnly = true;
             this.dgvEmpleados.Size = new System.Drawing.Size(526, 176);
             this.dgvEmpleados.TabIndex = 54;
+            this.dgvEmpleados.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvEmpleados_CellMouseClick);
             // 
             // txtApellidos
             // 
