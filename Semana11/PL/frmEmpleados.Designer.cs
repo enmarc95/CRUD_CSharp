@@ -109,18 +109,18 @@ namespace Semana11.PL
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(486, 135);
+            this.btnDelete.Location = new System.Drawing.Point(486, 131);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(75, 23);
+            this.btnDelete.Size = new System.Drawing.Size(75, 31);
             this.btnDelete.TabIndex = 58;
             this.btnDelete.Text = "Eliminar";
             this.btnDelete.UseVisualStyleBackColor = true;
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(486, 80);
+            this.btnUpdate.Location = new System.Drawing.Point(486, 79);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(75, 23);
+            this.btnUpdate.Size = new System.Drawing.Size(75, 31);
             this.btnUpdate.TabIndex = 57;
             this.btnUpdate.Text = "Actualizar";
             this.btnUpdate.UseVisualStyleBackColor = true;
@@ -129,16 +129,16 @@ namespace Semana11.PL
             // 
             this.btnInsert.Location = new System.Drawing.Point(486, 27);
             this.btnInsert.Name = "btnInsert";
-            this.btnInsert.Size = new System.Drawing.Size(75, 23);
+            this.btnInsert.Size = new System.Drawing.Size(75, 31);
             this.btnInsert.TabIndex = 56;
             this.btnInsert.Text = "Insertar";
             this.btnInsert.UseVisualStyleBackColor = true;
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(486, 190);
+            this.btnClose.Location = new System.Drawing.Point(486, 182);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(75, 23);
+            this.btnClose.Size = new System.Drawing.Size(75, 31);
             this.btnClose.TabIndex = 55;
             this.btnClose.Text = "Cerrar";
             this.btnClose.UseVisualStyleBackColor = true;
