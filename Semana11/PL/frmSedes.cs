@@ -28,8 +28,14 @@ namespace Semana11.PL
 
         private void fillDgvSedes()
         {
-            //dgvSedes.DataSource = sedes.getAllSedes();
-            dgvSedes.DataSource = sedes.getAllSedess();
+            dgvSedes.DataSource = sedes.getAllSedes();
+        }
+
+        private void clearTextBox()
+        {
+            txtId.Clear();
+            txtSede.Clear();
+            txtUbicacion.Clear();
         }
 
         private void btnInsert_Click(object sender, EventArgs e)
@@ -45,11 +51,9 @@ namespace Semana11.PL
                 SedesBLL sede = new SedesBLL(0, nombre, ubicacion);
                 if (sedes.createSede(sede))
                 {
-                    MessageBox.Show("La nueva se creó con éxito");
+                    MessageBox.Show("La nueva sede se creó con éxito");
                     fillDgvSedes();
-                    txtId.Clear();
-                    txtSede.Clear();
-                    txtUbicacion.Clear();
+                    clearTextBox();
                 }
                 else
                 {
@@ -91,9 +95,7 @@ namespace Semana11.PL
                 {
                     MessageBox.Show("Sede actualizada con éxito");
                     fillDgvSedes();
-                    txtId.Clear();
-                    txtSede.Clear();
-                    txtUbicacion.Clear();
+                    clearTextBox();
                 }
                 else
                 {
@@ -111,18 +113,15 @@ namespace Semana11.PL
             else
             {
                 int id = int.Parse(txtId.Text);
-                SedesBLL sede = new SedesBLL(id, "", "");
-                SedesDAL create = new SedesDAL();
+                SedesBLL sede = new SedesBLL(id);
                 var confirm = MessageBox.Show("¿Estás seguro de eliminar esta sede?", "Confirmar", MessageBoxButtons.YesNo);
                 if (confirm == DialogResult.Yes)
                 {
-                    if (create.deleteSede(sede))
+                    if (sedes.deleteSede(sede))
                     {
                         MessageBox.Show("Sede eliminada con éxito");
                         fillDgvSedes();
-                        txtId.Clear();
-                        txtSede.Clear();
-                        txtUbicacion.Clear();
+                        clearTextBox();
                     }
                     else
                     {
