@@ -39,7 +39,7 @@ namespace Semana11.DAL
             }
         }
 
-        public bool createEmpleado(EmpleadosBLL emp, SedesBLL sede)
+        public bool createEmpleado(EmpleadosBLL emp, SedesBLL sede, CargosBLL cargo)
         {
             try
             {
@@ -47,26 +47,28 @@ namespace Semana11.DAL
                 using (SqlCommand cmd = Con.CreateCommand())
                 {
                     Con.Open();
-                    cmd.CommandText = "INSERT INTO Empleados (nombres, apellidos, email, telefono, id_sede, dui) VALUES (@nom, @ap, @em, @tel, @idS, @dui);";
+                    cmd.CommandText = "INSERT INTO Empleados (nombres, apellidos, email, telefono, id_sede, dui, id_cargo) VALUES (@nom, @ap, @em, @tel, @idS, @dui, @idC);";
                     cmd.Parameters.AddWithValue("@nom", emp.Nombres);
                     cmd.Parameters.AddWithValue("@ap", emp.Apellidos);
                     cmd.Parameters.AddWithValue("@em", emp.Email);
                     cmd.Parameters.AddWithValue("@tel", emp.Telefono);
                     cmd.Parameters.AddWithValue("@idS", sede.Id);
                     cmd.Parameters.AddWithValue("@dui", emp.Dui);
+                    cmd.Parameters.AddWithValue("@idC", cargo.Id);
                     cmd.ExecuteNonQuery();
                     Con.Close();
 
                     return true;
                 }
             }
-            catch
+            catch (Exception e)
             {
+                Console.WriteLine("ERROR: " + e.GetBaseException());
                 return false;
             }
         }
         
-        public bool updateEmpleado(EmpleadosBLL emp, SedesBLL sede)
+        public bool updateEmpleado(EmpleadosBLL emp, SedesBLL sede, CargosBLL cargo)
         {
             try
             {
@@ -74,7 +76,7 @@ namespace Semana11.DAL
                 using (SqlCommand cmd = Con.CreateCommand())
                 {
                     Con.Open();
-                    cmd.CommandText = "UPDATE Empleados SET nombres = @nom, apellidos = @ap, email = @em, telefono = @tel, id_sede = @idS, dui = @dui WHERE id = @id;";
+                    cmd.CommandText = "UPDATE Empleados SET nombres = @nom, apellidos = @ap, email = @em, telefono = @tel, id_sede = @idS, dui = @dui, id_cargo = @idC WHERE id = @id;";
                     cmd.Parameters.AddWithValue("@id", emp.Id);
                     cmd.Parameters.AddWithValue("@nom", emp.Nombres);
                     cmd.Parameters.AddWithValue("@ap", emp.Apellidos);
@@ -82,6 +84,7 @@ namespace Semana11.DAL
                     cmd.Parameters.AddWithValue("@tel", emp.Telefono);
                     cmd.Parameters.AddWithValue("@idS", sede.Id);
                     cmd.Parameters.AddWithValue("@dui", emp.Dui);
+                    cmd.Parameters.AddWithValue("@idC", cargo.Id);
                     cmd.ExecuteNonQuery();
                     Con.Close();
 

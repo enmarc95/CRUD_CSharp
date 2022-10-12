@@ -16,11 +16,13 @@ namespace Semana11.PL
     {
         SedesDAL sedes;
         EmpleadosDAL empleados;
+        CargosDAL cargos;
         public frmEmpleados()
         {
             InitializeComponent();
             this.sedes = new SedesDAL();
             this.empleados = new EmpleadosDAL();
+            this.cargos = new CargosDAL();
         }
 
         private void listSedes()
@@ -28,6 +30,15 @@ namespace Semana11.PL
             cmbSedes.DataSource = sedes.getAllSedes();
             cmbSedes.DisplayMember = "nombre";
             cmbSedes.ValueMember = "id";
+            cmbSedes.SelectedValue = 0;
+        }
+
+        private void listCargos()
+        {
+            cmbCargo.DataSource = cargos.getAllCargos();
+            cmbCargo.DisplayMember = "cargo";
+            cmbCargo.ValueMember = "id";
+            cmbCargo.SelectedValue = 0;
         }
 
         private void fillDgvEmpleados()
@@ -42,11 +53,15 @@ namespace Semana11.PL
             txtEmail.Clear();
             txtTelefono.Clear();
             txtDui.Clear();
+            txtId.Clear();
+            cmbSedes.SelectedValue = 0;
+            cmbCargo.SelectedValue = 0;
         }
 
         private void frmEmpleados_Load(object sender, EventArgs e)
         {
             listSedes();
+            listCargos();
             fillDgvEmpleados();
         }
 
@@ -71,9 +86,11 @@ namespace Semana11.PL
                 string telefono = txtTelefono.Text;
                 string dui = txtDui.Text;
                 int idSede = Convert.ToInt32(cmbSedes.SelectedValue);
-                SedesBLL sede = new SedesBLL(idSede, null, null);
+                int idCargo = Convert.ToInt32(cmbCargo.SelectedValue);
                 EmpleadosBLL emp = new EmpleadosBLL(0, nombres, apellidos, email, telefono, dui);
-                if (empleados.createEmpleado(emp, sede))
+                SedesBLL sede = new SedesBLL(idSede);
+                CargosBLL cargo = new CargosBLL(idCargo);
+                if (empleados.createEmpleado(emp, sede, cargo))
                 {
                     MessageBox.Show("Empleado registrado con éxito");
                     fillDgvEmpleados();
@@ -103,9 +120,11 @@ namespace Semana11.PL
                 string telefono = txtTelefono.Text;
                 string dui = txtDui.Text;
                 int idSede = Convert.ToInt32(cmbSedes.SelectedValue);
-                SedesBLL sede = new SedesBLL(idSede, null, null);
+                int idCargo = Convert.ToInt32(cmbCargo.SelectedValue);
                 EmpleadosBLL emp = new EmpleadosBLL(id, nombres, apellidos, email, telefono, dui);
-                if (empleados.updateEmpleado(emp, sede))
+                SedesBLL sede = new SedesBLL(idSede);
+                CargosBLL cargo = new CargosBLL(idCargo);
+                if (empleados.updateEmpleado(emp, sede, cargo))
                 {
                     MessageBox.Show("Se actualizaron los datos del empleado");
                     fillDgvEmpleados();
@@ -157,6 +176,7 @@ namespace Semana11.PL
                 txtTelefono.Text = dgvEmpleados.Rows[index].Cells[4].Value.ToString();
                 cmbSedes.SelectedValue = Convert.ToInt32(dgvEmpleados.Rows[index].Cells[5].Value);
                 txtDui.Text = dgvEmpleados.Rows[index].Cells[6].Value.ToString();
+                cmbCargo.SelectedValue = Convert.ToInt32(dgvEmpleados.Rows[index].Cells[7].Value);
             }
         }
     }

@@ -48,12 +48,14 @@ namespace Semana11.PL
             this.txtId = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.cmbCargo = new System.Windows.Forms.ComboBox();
+            this.label8 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleados)).BeginInit();
             this.SuspendLayout();
             // 
             // txtDui
             // 
-            this.txtDui.Location = new System.Drawing.Point(277, 193);
+            this.txtDui.Location = new System.Drawing.Point(346, 193);
             this.txtDui.Name = "txtDui";
             this.txtDui.Size = new System.Drawing.Size(180, 20);
             this.txtDui.TabIndex = 65;
@@ -61,7 +63,7 @@ namespace Semana11.PL
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(235, 196);
+            this.label7.Location = new System.Drawing.Point(292, 196);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(26, 13);
             this.label7.TabIndex = 64;
@@ -71,7 +73,7 @@ namespace Semana11.PL
             // 
             this.txtTelefono.Location = new System.Drawing.Point(99, 193);
             this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.Size = new System.Drawing.Size(116, 20);
+            this.txtTelefono.Size = new System.Drawing.Size(172, 20);
             this.txtTelefono.TabIndex = 63;
             // 
             // label6
@@ -87,7 +89,7 @@ namespace Semana11.PL
             // 
             this.txtEmail.Location = new System.Drawing.Point(99, 148);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(358, 20);
+            this.txtEmail.Size = new System.Drawing.Size(427, 20);
             this.txtEmail.TabIndex = 61;
             // 
             // label5
@@ -102,14 +104,14 @@ namespace Semana11.PL
             // cmbSedes
             // 
             this.cmbSedes.FormattingEnabled = true;
-            this.cmbSedes.Location = new System.Drawing.Point(277, 27);
+            this.cmbSedes.Location = new System.Drawing.Point(236, 27);
             this.cmbSedes.Name = "cmbSedes";
-            this.cmbSedes.Size = new System.Drawing.Size(180, 21);
+            this.cmbSedes.Size = new System.Drawing.Size(105, 21);
             this.cmbSedes.TabIndex = 59;
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(486, 131);
+            this.btnDelete.Location = new System.Drawing.Point(548, 131);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(75, 31);
             this.btnDelete.TabIndex = 58;
@@ -119,7 +121,7 @@ namespace Semana11.PL
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(486, 79);
+            this.btnUpdate.Location = new System.Drawing.Point(548, 79);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(75, 31);
             this.btnUpdate.TabIndex = 57;
@@ -129,7 +131,7 @@ namespace Semana11.PL
             // 
             // btnInsert
             // 
-            this.btnInsert.Location = new System.Drawing.Point(486, 27);
+            this.btnInsert.Location = new System.Drawing.Point(548, 27);
             this.btnInsert.Name = "btnInsert";
             this.btnInsert.Size = new System.Drawing.Size(75, 31);
             this.btnInsert.TabIndex = 56;
@@ -139,7 +141,7 @@ namespace Semana11.PL
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(486, 182);
+            this.btnClose.Location = new System.Drawing.Point(548, 182);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(75, 31);
             this.btnClose.TabIndex = 55;
@@ -153,7 +155,7 @@ namespace Semana11.PL
             this.dgvEmpleados.Location = new System.Drawing.Point(35, 232);
             this.dgvEmpleados.Name = "dgvEmpleados";
             this.dgvEmpleados.ReadOnly = true;
-            this.dgvEmpleados.Size = new System.Drawing.Size(526, 176);
+            this.dgvEmpleados.Size = new System.Drawing.Size(588, 176);
             this.dgvEmpleados.TabIndex = 54;
             this.dgvEmpleados.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvEmpleados_CellMouseClick);
             // 
@@ -161,7 +163,7 @@ namespace Semana11.PL
             // 
             this.txtApellidos.Location = new System.Drawing.Point(99, 107);
             this.txtApellidos.Name = "txtApellidos";
-            this.txtApellidos.Size = new System.Drawing.Size(358, 20);
+            this.txtApellidos.Size = new System.Drawing.Size(427, 20);
             this.txtApellidos.TabIndex = 53;
             // 
             // label3
@@ -177,7 +179,7 @@ namespace Semana11.PL
             // 
             this.txtNombres.Location = new System.Drawing.Point(99, 67);
             this.txtNombres.Name = "txtNombres";
-            this.txtNombres.Size = new System.Drawing.Size(358, 20);
+            this.txtNombres.Size = new System.Drawing.Size(427, 20);
             this.txtNombres.TabIndex = 51;
             // 
             // label2
@@ -194,13 +196,13 @@ namespace Semana11.PL
             this.txtId.Location = new System.Drawing.Point(99, 28);
             this.txtId.Name = "txtId";
             this.txtId.ReadOnly = true;
-            this.txtId.Size = new System.Drawing.Size(116, 20);
+            this.txtId.Size = new System.Drawing.Size(73, 20);
             this.txtId.TabIndex = 49;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(229, 30);
+            this.label4.Location = new System.Drawing.Point(188, 30);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(32, 13);
             this.label4.TabIndex = 48;
@@ -215,11 +217,30 @@ namespace Semana11.PL
             this.label1.TabIndex = 47;
             this.label1.Text = "Id";
             // 
+            // cmbCargo
+            // 
+            this.cmbCargo.FormattingEnabled = true;
+            this.cmbCargo.Location = new System.Drawing.Point(403, 27);
+            this.cmbCargo.Name = "cmbCargo";
+            this.cmbCargo.Size = new System.Drawing.Size(123, 21);
+            this.cmbCargo.TabIndex = 67;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(355, 30);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(35, 13);
+            this.label8.TabIndex = 66;
+            this.label8.Text = "Cargo";
+            // 
             // frmEmpleados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(591, 436);
+            this.ClientSize = new System.Drawing.Size(654, 436);
+            this.Controls.Add(this.cmbCargo);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.txtDui);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.txtTelefono);
@@ -269,5 +290,7 @@ namespace Semana11.PL
         private System.Windows.Forms.TextBox txtId;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox cmbCargo;
+        private System.Windows.Forms.Label label8;
     }
 }
